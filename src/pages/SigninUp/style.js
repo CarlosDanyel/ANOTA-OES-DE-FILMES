@@ -76,18 +76,13 @@ export const Form = styled.form`
     }
   }
 
-  button:nth-of-type(2) {
-    width: 100%;
-    background-color: transparent;
-
-    margin-top: 35px;
-
-    a {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: ${({ theme }) => theme.COLORS.PRIMARY_COLOR};
-    }
+  a {
+    margin-top: 42px;
+    font-family: "Roboto Slab";
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: ${({ theme }) => theme.COLORS.PRIMARY_COLOR};
 
     svg {
       font-size: 20px;

@@ -3,7 +3,7 @@ import { Container } from "./styles";
 
 export const BtnExit = ({ href }) => {
   return (
-    <Container href={href}>
+    <Container to={href}>
       <IoIosArrowRoundBack />
       Voltar
     </Container>

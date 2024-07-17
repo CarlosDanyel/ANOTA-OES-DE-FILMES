@@ -21,7 +21,7 @@ export const Signin = () => {
         />
 
         <Button type="submit" title="Entrar" />
-        <Link to={"/signinup"}> Criar Conta</Link>
+        <Link to="/signinup"> Criar Conta</Link>
       </Form>
       <Backgound />
     </Container>

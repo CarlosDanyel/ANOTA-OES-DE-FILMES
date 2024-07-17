@@ -1,13 +1,14 @@
 import { Backgound, Container, Form } from "./style";
 
 import { FaArrowLeft } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import { Button } from "../../components/Button";
 import { InputText } from "../../components/InputText";
 
 export const SigninUp = () => {
   return (
     <Container>
-      <Form>
+      <Form action="/">
         <h1>RocketMovies</h1>
         <p>Aplicação para acompanhar tudo que assistir.</p>
 
@@ -17,8 +18,11 @@ export const SigninUp = () => {
         <InputText type="email" titlePlaceholder="E - mail" />
         <InputText type="password" titlePlaceholder="Senha" />
 
-        <Button href="/signin" title="Cadastrar" />
-        <Button href="/signin" title="Voltar para o login" icon={FaArrowLeft} />
+        <Button type="submit" title="Cadastrar" />
+        <Link to="/">
+          <FaArrowLeft />
+          Voltar para o login
+        </Link>
       </Form>
       <Backgound />
     </Container>

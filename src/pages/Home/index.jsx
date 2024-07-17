@@ -2,6 +2,7 @@ import { Header } from "../../components/Header";
 
 import { IoAdd } from "react-icons/io5";
 
+import { Link } from "react-router-dom";
 import { Button } from "../../components/Button/index.jsx";
 import { CardFilme } from "../../components/CardFilmes/index.jsx";
 import { Container, ContainerNewFilme, Display } from "./styles.js";
@@ -15,9 +16,9 @@ export const Home = () => {
           <Display>
             <div>
               <h1>Meus filmes</h1>
-              <a href="/new">
+              <Link to="/new">
                 <Button title="Adicionar filme" icon={IoAdd} />
-              </a>
+              </Link>
             </div>
             <ContainerNewFilme>
               <CardFilme

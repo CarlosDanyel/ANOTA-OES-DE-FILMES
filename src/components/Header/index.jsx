@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { InputText } from "../InputText";
 import { Container, Display, Profile } from "./styles.js";
 
@@ -10,13 +11,13 @@ export const Header = () => {
         <Profile>
           <div>
             <strong>Carlos Danyel</strong>
-            <a href="/signin">
+            <Link to="/signin">
               <span>Sair</span>
-            </a>
+            </Link>
           </div>
-          <a href="/profile">
+          <Link to="/profile">
             <img src="https://github.com/CarlosDanyel.png" alt="Foto Usuario" />
-          </a>
+          </Link>
         </Profile>
       </Display>
     </Container>
