@@ -1,8 +1,8 @@
 import { Btn } from "./styles";
 
-export const Button = ({ title, icon: Icon, type }) => {
+export const Button = ({ clickBtnForm, title, icon: Icon }) => {
   return (
-    <Btn type={type}>
+    <Btn type="button" onClick={clickBtnForm}>
       {Icon && <Icon />}
       {title}
     </Btn>

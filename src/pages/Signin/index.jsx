@@ -14,11 +14,7 @@ export const Signin = () => {
         <h2>Faça seu login</h2>
 
         <InputText type="email" titlePlaceholder="E - mail" />
-        <InputText
-          type="password"
-          titlePlaceholder="Senha"
-          autocomplete="current-password"
-        />
+        <InputText type="password" titlePlaceholder="Senha" />
 
         <Button type="submit" title="Entrar" />
         <Link to="/signinup"> Criar Conta</Link>

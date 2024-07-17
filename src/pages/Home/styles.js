@@ -54,6 +54,7 @@ export const ContainerNewFilme = styled.div`
 
   &::-webkit-scrollbar {
     width: 8px;
+    max-height: 10px;
   }
 
   &::-webkit-scrollbar-thumb {
