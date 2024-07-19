@@ -53,7 +53,12 @@ export const ContainerNewFilme = styled.div`
   padding: 0 8px 0 0;
 
   a {
+    position: relative;
     color: ${({ theme }) => theme.COLORS.WHITE};
+
+    > div:nth-of-type(2) {
+      padding-left: 2.6rem;
+    }
   }
 
   &::-webkit-scrollbar {
@@ -70,4 +75,25 @@ export const ContainerNewFilme = styled.div`
     background: transparent;
     border-radius: 10px;
   }
+`;
+
+export const ExcluiFilme = styled.button`
+  width: 26px;
+  height: 26px;
+
+  background-color: ${({ theme }) => theme.COLORS.PRIMARY_COLOR};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 20px;
+
+  position: absolute;
+  top: 0;
+
+  content: "";
+  border: 5px solid transparent;
+  box-sizing: content-box;
+
+  border-radius: 5% 50% 50% 50%;
 `;

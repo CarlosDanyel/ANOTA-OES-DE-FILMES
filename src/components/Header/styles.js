@@ -54,8 +54,10 @@ export const Profile = styled.div`
       color: ${({ theme }) => theme.COLORS.WHITE};
     }
 
-    > a {
+    > button {
       align-self: end;
+      background: transparent;
+      border: none;
 
       font-family: "Roboto Slab";
 

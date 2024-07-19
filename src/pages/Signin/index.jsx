@@ -1,10 +1,23 @@
 import { Backgound, Container, Form } from "./style";
 
 import { Link } from "react-router-dom";
+
 import { Button } from "../../components/Button";
 import { InputText } from "../../components/InputText";
 
+import { useState } from "react";
+import { useAuth } from "../../hooks/auth";
+
 export const Signin = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const { signin } = useAuth();
+
+  function handleSigninIn() {
+    signin({ email, password });
+  }
+
   return (
     <Container>
       <Form action="/">
@@ -13,10 +26,18 @@ export const Signin = () => {
 
         <h2>Faça seu login</h2>
 
-        <InputText type="email" titlePlaceholder="E - mail" />
-        <InputText type="password" titlePlaceholder="Senha" />
+        <InputText
+          setEstate={setEmail}
+          type="email"
+          titlePlaceholder="E - mail"
+        />
+        <InputText
+          setEstate={setPassword}
+          type="password"
+          titlePlaceholder="Senha"
+        />
 
-        <Button type="submit" title="Entrar" />
+        <Button clickBtnForm={() => handleSigninIn()} title="Entrar" />
         <Link to="/signinup"> Criar Conta</Link>
       </Form>
       <Backgound />

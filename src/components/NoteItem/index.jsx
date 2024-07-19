@@ -1,18 +1,24 @@
-import { FiPlus, FiX } from "react-icons/fi";
+import { FiPlus } from "react-icons/fi";
 import { Container } from "./styles.js";
 
-export const NoteItem = ({ isNew, value, onClick, placeholder, ...res }) => {
+export const NoteItem = ({
+  value,
+  clickBtnForm,
+  placeholder,
+  setEstate,
+  ...res
+}) => {
   return (
-    <Container isNew={isNew}>
+    <Container>
       <input
+        onChange={(e) => setEstate(e.target.value)}
         type="text"
         value={value}
-        readOnly={!isNew}
         placeholder={placeholder}
         {...res}
       ></input>
-      <button type="button" onClick={onClick}>
-        {isNew ? <FiPlus /> : <FiX />}
+      <button type="button" onClick={clickBtnForm}>
+        <FiPlus />
       </button>
     </Container>
   );

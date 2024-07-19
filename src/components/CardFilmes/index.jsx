@@ -6,7 +6,8 @@ export const CardFilme = ({ data, ...rest }) => {
   return (
     <Container {...rest}>
       <h2>{data.title}</h2>
-      <Stars />
+
+      <Stars avaliation={data.rating} />
       <p>{data.description}</p>
 
       {data.tags && (

@@ -60,7 +60,7 @@ export const Bookmarks = styled.div`
   flex-direction: column;
   gap: 24px !important;
 
-  span {
+  > span {
     font-family: "Roboto Slab";
 
     font-weight: 400;
@@ -68,6 +68,42 @@ export const Bookmarks = styled.div`
     line-height: 26px;
 
     color: #999591;
+  }
+
+  > div {
+    display: flex;
+    align-items: center;
+
+    > span {
+      display: flex;
+      justify-content: space-between;
+
+      flex-basis: auto;
+
+      justify-content: space-between;
+      gap: 24px;
+
+      padding: 16px;
+      border-radius: 10px;
+
+      background-color: #262529;
+
+      color: #ffffff;
+      border: none;
+      box-sizing: border-box;
+
+      > button {
+        border: none;
+
+        background: none;
+
+        color: ${({ theme }) => theme.COLORS.PRIMARY_COLOR};
+        font-size: 24px;
+
+        display: flex;
+        align-items: center;
+      }
+    }
   }
 
   > div:nth-of-type(1) {
@@ -91,11 +127,19 @@ export const Bookmarks = styled.div`
 
     width: 100%;
 
+    a {
+      width: 100%;
+
+      > button {
+        width: 100%;
+      }
+    }
+
     > button {
       width: 100%;
     }
 
-    > button:nth-of-type(1) {
+    > a button:nth-of-type(1) {
       background-color: #0d0c0f;
       color: #ff859b;
     }

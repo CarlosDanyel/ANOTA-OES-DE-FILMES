@@ -1,21 +1,28 @@
 import { useEffect, useState } from "react";
-import { IoAdd } from "react-icons/io5";
 
 import { Header } from "../../components/Header";
 
 import { api } from "../../services/api.js";
 
-import { Link, useNavigate } from "react-router-dom";
-import { Button } from "../../components/Button/index.jsx";
 import { CardFilme } from "../../components/CardFilmes/index.jsx";
 
-import { Container, ContainerNewFilme, Display } from "./styles.js";
+import { FiX } from "react-icons/fi";
+import { BtnExit } from "../../components/BtnExit/index.jsx";
 
-export const Home = () => {
+import { useNavigate } from "react-router-dom";
+
+import {
+  Container,
+  ContainerNewFilme,
+  Display,
+  ExcluiFilme,
+} from "./styles.js";
+
+export const DeleteNote = () => {
+  const navigate = useNavigate();
+
   const [search, setSearch] = useState("");
   const [notes, setNotes] = useState([]);
-
-  const navigate = useNavigate();
 
   useEffect(() => {
     async function fetchNotes() {
@@ -25,8 +32,9 @@ export const Home = () => {
     fetchNotes();
   }, [search]);
 
-  function handleDetails(id) {
-    navigate(`/filme/${id}`);
+  async function handleDelete(id) {
+    const response = await api.delete(`/notes/${id}`);
+    setNotes((prevState) => prevState.filter((note) => note.id !== id));
   }
 
   return (
@@ -36,14 +44,18 @@ export const Home = () => {
         <main>
           <Display>
             <div>
-              <h1>Meus filmes</h1>
-              <Link to="/new">
-                <Button title="Adicionar filme" icon={IoAdd} />
-              </Link>
+              <h1>Delete um filme</h1>
+              <BtnExit href="/" />
             </div>
             <ContainerNewFilme>
               {notes.map((note, index) => (
-                <a key={index} onClick={() => handleDetails(note.id)}>
+                <a key={index}>
+                  <ExcluiFilme
+                    type="button"
+                    onClick={() => handleDelete(note.id)}
+                  >
+                    <FiX />
+                  </ExcluiFilme>
                   <CardFilme data={note} />
                 </a>
               ))}

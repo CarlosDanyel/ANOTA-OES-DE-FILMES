@@ -11,7 +11,9 @@ export const Container = styled.div`
 
   main {
     width: 100%;
+    overflow-y: auto;
     grid-area: content;
+    padding-bottom: 3.5rem;
   }
 `;
 

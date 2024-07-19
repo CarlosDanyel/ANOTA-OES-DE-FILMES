@@ -11,11 +11,10 @@ export const Container = styled.div`
   padding: 16px;
   border-radius: 10px;
 
-  background-color: ${({ theme, isNew }) =>
-    isNew ? "transparent" : "#262529"};
+  background-color: transparent;
 
-  color: ${({ theme, isNew }) => (isNew ? "#948F99" : "#FFFFFF")};
-  border: ${({ theme, isNew }) => (isNew ? `2px dashed #948F99` : `none`)};
+  color: #948f99;
+  border: 2px dashed #948f99;
   box-sizing: border-box;
 
   > button {
@@ -31,7 +30,7 @@ export const Container = styled.div`
   }
 
   > input {
-    width: ${({ isNew }) => (isNew ? `140px` : ` 5rem`)};
+    width: 140px;
     color: ${({ theme }) => theme.COLORS.WHITE};
     font-family: "Roboto Slab";
 

@@ -1,8 +1,12 @@
 import { Container } from "./style";
 
-export const TeaxtArea = ({ value, placeholder, ...res }) => {
+export const TeaxtArea = ({ setEstate, value, placeholder, ...res }) => {
   return (
-    <Container placeholder={placeholder} {...res}>
+    <Container
+      onChange={(e) => setEstate(e.target.value)}
+      placeholder={placeholder}
+      {...res}
+    >
       {value}
     </Container>
   );
